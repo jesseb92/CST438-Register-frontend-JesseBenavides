@@ -8,14 +8,6 @@ import Radio from '@mui/material/Radio';
 import {DataGrid} from '@mui/x-data-grid';
 import {SEMESTER_LIST} from '../constants.js'
 
-
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import TextField from '@mui/material/TextField';
-import PropTypes from 'prop-types';
-
 // user selects from a list of  (year, semester) values
 class Semester extends Component {
     constructor(props) {
@@ -28,8 +20,6 @@ class Semester extends Component {
     this.setState({selected: event.target.value});
   }
   
- 
- 
   render() {    
       const icolumns = [
       {
@@ -50,8 +40,7 @@ class Semester extends Component {
         )
       },
       { field: 'name', headerName: 'Semester', width: 200 }
-      ];   
-
+      ];       
        
     return (
        <div>
@@ -67,19 +56,12 @@ class Semester extends Component {
                 <DataGrid   rows={SEMESTER_LIST} columns={icolumns} />
               </div>                
               <Button component={Link} 
-                    to={{pathname:'/schedule' , 
-                    year:SEMESTER_LIST[this.state.selected].year, 
-                    semester:SEMESTER_LIST[this.state.selected].name}} 
+                      to={{pathname:'/schedule' , 
+                      year:SEMESTER_LIST[this.state.selected].year, 
+                      semester:SEMESTER_LIST[this.state.selected].name}} 
                 variant="outlined" color="primary" style={{margin: 10}}>
                 Get Schedule
               </Button>
-			  
-	
-			   <Button component={Link} 
-                    to={{pathname:'/AddStudent'}} 
-                variant="outlined" color="primary" style={{margin: 10}}>
-                Add Student
-              </Button>		  
           </div>
       </div>
     )
