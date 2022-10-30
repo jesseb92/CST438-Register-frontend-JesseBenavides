@@ -4,8 +4,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SchedList from './components/SchedList';
 import Semester from './components/Semester';
-import AddStudent from './components/AddStudent';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Admin from './components/Admin';
 
 function App() {
   return (
@@ -21,19 +21,11 @@ function App() {
        <Switch>
         <Route exact path='/' component={Semester} />
         <Route path='/schedule' component={SchedList} />
-		<Route path='/AddStudent' component={AddStudent} />
+        <Route path='/admin' component={Admin} />
        </Switch>
       </BrowserRouter>
-	  
-
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
-
